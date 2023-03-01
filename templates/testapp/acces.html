@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>my_diary.......</h1>
+    <hr>
+    {% if obj %}
+    <table border="10">
+
+        <thead>
+            <th>subject</th>
+            <th>description</th>
+            <th>Update</th>
+            <th>delete</th>
+        </thead>
+        {%for s in obj%}
+        <tr>
+            <td>{{s.subject}}</td>
+            <td>{{s.discription}}</td>
+            <td> <a href="{% url 'update' s.id %}">update</a></td>
+            <td><a href="{% url 'delete' s.id %}">delete</a> </td>
+        </tr>
+        {%endfor%}
+    </table>
+    <!-- {%else%} -->
+    <!-- <p>no deta found!!!</p> -->
+    <!-- {%endif%} -->
+
+</body>
+
+</html>
